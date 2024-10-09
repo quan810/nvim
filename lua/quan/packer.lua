@@ -7,40 +7,43 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use {
-      'nvim-telescope/telescope-file-browser.nvim',
-      requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+    'nvim-telescope/telescope-file-browser.nvim',
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   }
   use({
-	  "folke/tokyonight.nvim",
-	  as = 'tokyonight',
-	  config = function() require('tokyonight').setup({
-          transparent = true,
-          style = "storm",
+    "folke/tokyonight.nvim",
+    as = 'tokyonight',
+    config = function()
+      require('tokyonight').setup({
+        transparent = true,
+        style = "storm",
       })
-	  vim.cmd('colorscheme tokyonight-storm')
-  end})
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+      vim.cmd('colorscheme tokyonight-storm')
+    end
+  })
+  use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('nvim-treesitter/playground')
   use('tpope/vim-fugitive')
   use('mbbill/undotree')
   use('theprimeagen/harpoon')
   use('alexghergh/nvim-tmux-navigation')
   use({
-	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v3.x',
-	  requires = {
-		  --- Uncomment the two plugins below if you want to manage the language servers from neovim
-		  {'williamboman/mason.nvim'},
-		  {'williamboman/mason-lspconfig.nvim'},
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v3.x',
+    requires = {
+      --- Uncomment the two plugins below if you want to manage the language servers from neovim
+      { 'williamboman/mason.nvim' },
+      { 'williamboman/mason-lspconfig.nvim' },
 
-		  -- LSP Support
-		  {'neovim/nvim-lspconfig'},
-		  -- Autocompletion
-		  {'hrsh7th/nvim-cmp'},
-		  {'hrsh7th/cmp-nvim-lsp'},
-		  {'L3MON4D3/LuaSnip'},
-	  }
+      -- LSP Support
+      { 'neovim/nvim-lspconfig' },
+      -- Autocompletion
+      { 'hrsh7th/nvim-cmp' },
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'L3MON4D3/LuaSnip' },
+    }
   })
   use('gbprod/yanky.nvim')
-  use('sbdchd/neoformat')
+  use('Muniftanjim/prettier.nvim')
+  use("stevearc/conform.nvim")
 end)

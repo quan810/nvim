@@ -1,4 +1,3 @@
-
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
 
@@ -16,7 +15,7 @@ vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>Y", "\"+Y")
-vim.keymap.set({"n", "v"}, "y", "<Plug>(YankyYank)")
+vim.keymap.set({ "n", "v" }, "y", "<Plug>(YankyYank)")
 
 vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
@@ -25,5 +24,3 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gIc<Left><Left><Left><Left>]])
 vim.keymap.set("v", "<leader>s", [[y:%s/\V<C-r>"/<C-r>"/gIc<Left><Left><Left><Left>]])
-vim.keymap.set("n", "<C-f>", ":Neoformat<CR>")
-vim.keymap.set("n", "zt", "zfat")
